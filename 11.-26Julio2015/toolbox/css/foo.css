@@ -1,0 +1,39 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+.toolbox{
+	display: inline-block;
+	padding: 10px 10px 10px 80px;
+	border-radius: 0 0 5px rgba(0,0,0,.5);
+	box-shadow: 0 0 5px rgba(0,0,0,.5);
+	position: relative;
+}
+.toolbox i{
+	position: absolute;
+	padding: 7px;
+	border-radius: 50%;
+	background-color: #000;
+	color: #fff;
+	right: -11px;
+	top:-17px;	
+	cursor: pointer;
+	box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+.error{
+	background: #e97a7a url("../img/error.png") no-repeat 10px center / 10%;
+	color: #5f0404;
+}
+.warning{
+	background: #f2de00 url("../img/warning.png") no-repeat 10px center / 10%;
+	color:#766c00;
+}
+.ok{
+	background: #d9f281 url("../img/ok.png") no-repeat 10px center / 10%;
+	color:#69840b;
+}
+
+
+
+
+
+

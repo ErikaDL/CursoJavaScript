@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Diseño Responsivo - 1Cuadro</title>
+		<meta charset="utf-8">
+		  <style>
+		  div{
+		    background-color: yellow;
+		    width: 100px;
+		    height: 100px;
+		    font-family: arial;
+		    font-size: 16;
+		  }
+		  </style>
+		<script>
+			var Div = function (){
+				var ancho = window.innerWidth;
+				var altura = window.innerHeight;
+
+				//alert(altura + " " + ancho);
+				
+				var cuadro = document.getElementById("cuadro1");
+				cuadro.style.width = ancho + "px";
+				cuadro.style.height = altura + "px";
+				cuadro.style.background = "red";
+				cuadro.innerHTML = "Ancho: " + ancho + "px Altura: " + altura + "px";
+			}
+			
+			window.addEventListener("resize", Div);
+
+		</script>
+	</head>
+	<body>
+		<div id="cuadro1"></div>
+	</body>
+</html>

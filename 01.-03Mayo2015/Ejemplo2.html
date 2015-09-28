@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script>
+		//funciones anonimas o autoejecutables
+			/*var anchura = function (){
+				var anchura = window.innerWidth;
+				console.log(anchura);	
+			}
+			var altura = function (){
+				var altura = window.innerHeight;
+				console.log(altura);	
+			}*/
+
+			/*var cambio = function(){
+				var x = document.getElementsByTagName("p");
+				x[0].innerHTML = "Prueba";
+			}*/
+
+			var cambiaNombre = function(){
+				var anchura = window.innerWidth;
+				var elBody = document.getElementById("inicio");
+
+				if(anchura <= 600){
+					//console.log("Menos de 600");
+					elBody.setAttribute("data-pantalla","Smartphone");
+				}else{
+					//console.log("Mas de 600");
+					elBody.setAttribute("data-pantalla","Tablet");
+				}
+				
+			}
+			
+			//window.addEventListener("resize", anchura);
+			//window.addEventListener("DOMContentLoaded", cambio);
+
+			window.addEventListener("resize", cambiaNombre);
+
+
+		</script>
+	</head>
+	<body id="inicio" data-pantalla="lap">
+		<p></p>
+	</body>
+</html>

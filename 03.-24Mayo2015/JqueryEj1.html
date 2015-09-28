@@ -1,0 +1,39 @@
+<!doctypeh html>
+<html>
+<head>
+	<meta charset="utf-8">	
+	<title>Jquery Ejercicio 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$('body').ready(function(){
+
+			$('.frutas').click(function(){
+				var elementoActual = $(this);
+
+				var fruta = elementoActual.html();
+
+				//console.log(fruta);
+				$("#seleccion").html("<b>Fruta seleccionada:</b> " + fruta);				
+			});
+
+			$('.color').click(function(){
+				var colorActual = $(this);
+				$("#seleccion").css("background-color","#" + colorActual.data("color"));
+			})
+
+		});
+
+	</script>
+</head>
+<body>
+	<!--div id="uno">Hola soy un div</div-->
+	<!--div>Hola soy otro div</div-->
+	<p class="frutas">Manzana</p>
+	<p class="frutas">Naranja</p>
+	<p class="frutas">Plátano</p>
+	<div id="seleccion"></div>
+	<button class="color" data-color="FF0000">Rojo</button>
+	<button class="color" data-color="0000FF">Azul</button>
+	<button class="color" data-color="C0C0C0">Gris</button>
+</body>
+</html>

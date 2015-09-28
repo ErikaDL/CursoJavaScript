@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>Ejemplo JS prompt</title>
+	</head>
+	<body>
+		<div>Div 1</div>		
+		<div>Div 2</div>
+		<div>Div 3</div>
+		<script>						
+				var nombre = prompt("¿Cómo te llamas?","");
+
+				var elementos = document.getElementsByTagName("div");
+
+				elementos[2].innerHTML = nombre;
+
+		</script>	
+	</body>
+</html>

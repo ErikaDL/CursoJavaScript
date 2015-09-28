@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<title>Examen 28 de Junio</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<meta charset="utf-8">
+</head>
+<body>
+	<form method="post" id="formulario" onsubmit="return false">
+		<h1>Formulario de registro</h1>
+			<input type="text" name="email" id="email" placeholder="Correo electrónico">			
+			<input type="password" name="password" id="password" placeholder="Tu contraseña">
+			<input type="password" name="password1" id="password1" placeholder="Repite tu contraseña">
+			<button id="btn-enviar" onclick="validar()">Enviar</button>
+	</form>
+	<div id="mensaje" name="mensaje"></div>
+	<script>
+		var persona = {
+			form:[]
+		};
+
+		function validar(){
+			var correo = document.getElementById("email");
+			var password = document.getElementById("password");
+			var password1 = document.getElementById("password1");
+			var exp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+			if (exp.test(correo.value)){
+
+				if(password.length != 0 && password1.length != 0){
+
+					if(password.value == password1.value)	{
+						var forma = document.forms["formulario"];
+						var e = forma["email"].value, p = forma["password"].value, p1 = forma["password1"].value;
+						persona["form"].push({email: e, password: p, password1: p1});
+
+						var objeto = JSON.stringify(persona);
+						document.getElementById("mensaje").innerHTML = objeto;						
+					}else{
+						document.getElementById("mensaje").innerHTML = "Revisa tu contraseña";	
+					}
+
+				}else{
+					document.getElementById("mensaje").innerHTML = "Ingresa una contraseña válida.";	
+				}
+
+			}else{
+				document.getElementById("mensaje").innerHTML = "Error: La dirección de correo " + correo.value + " es incorrecta.";
+			}				
+		}
+
+	</script>
+</body>
+</html>

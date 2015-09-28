@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+  $('body').ready(function(){
+   
+    $(".frutas").click(function(){
+  
+      var elementoActual = $(this);
+  
+      var fruta = elementoActual.html();
+  
+      $("#seleccion").html("<b>Fruta seleccionada:</b> " + fruta);
+    });
+
+    $(".color").click(function(){
+      var colorActual = $(this);
+      $("#seleccion").css("background-color","#" + colorActual.data("color"));
+    });
+  
+  });
+  </script>
+</head>
+<body>
+  <p class="frutas">Manzana</p>
+  <p class="frutas">Naranja</p>
+  <p class="frutas">Platano</p>
+  <div id="seleccion"></div>
+  <button class="color" data-color="0000ff">Rojo</button>
+  <button class="color" data-color="ff0000">Amarillo</button>
+  <button class="color" data-color="C0C0C0">Gris</button>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo #1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+	$('body').ready(function(){
+		//Acceder a un elemento por su id
+		$("#mi-elemento").html("Contenido nuevo.");	
+		
+		//Acceder a un elemento por el nombre de etiqueta
+		//$("p").html("Contenido nuevo en etiqueta.");
+		
+		//Acceder a un elemento por una clase
+		$(".mi-clase").html("Contenido nuevo en etiqueta.");
+
+		//Acceder a y modificar varios elementos
+		$("#mi-elemento, .mi-clase").css("background-color","#C0C0C0");
+		
+		//Acceder y setear la propiedad id
+		//var atributos = $("#mi-elemento").attr("id","nuevo-valor");
+		
+		//Acceder a la propiedad id
+		var atributos = $("#mi-elemento").attr("id");	
+
+		//Acceder a la propiedad "data" de un elemento
+		var propiedadData = $("#mi-elemento").data("usuario");
+		console.log(propiedadData);
+
+		$("#el-boton").click(function(){
+			var usuario = $("#mi-elemento").data("usuario");
+			alert("El id del usuario es: " + usuario);
+		});
+
+		$(".usuarios").click(function(){
+			
+			var elementoActual = $(this);
+			
+			var tipoActual = elementoActual.data("tipo");
+			
+			var idActual = elementoActual.data("usuario");
+			
+			//var idActual = elementoActual.attr("data-usuario");
+			
+			$("span").html("El id es: " + idActual + " tipo: " + tipoActual);
+		});
+
+		$("#asignar").click(function(){
+			$("#contenedor").find('p').not("#parrafo").html("Contenido a los parrafos");
+		});
+
+	});
+	</script>
+	<style>
+	p{
+		cursor: pointer;
+	}
+	span{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-size: 80px;		
+	}
+	</style>
+</head>
+<body>
+	<p class="usuarios" id="mi-elemento" data-usuario="48372" data-tipo="admin"></p>
+	<p class="usuarios" data-usuario="48373" data-tipo="usuario">Usuario</p>
+	<p class="mi-clase usuarios" data-usuario="48374" data-tipo="super admin"></p>
+	<button id="el-boton">Mi botón</button>
+	<span></span>
+	<hr>	
+	<div id="contenedor">
+		<p></p>
+		<a href="http://thinksoft.com.mx" target="_blank">Visita thinksoft</a>
+		<p id="parrafo">Tengo ID</p>
+		<p></p>
+		<button id="asignar">Asignar a parrafos</button>
+	</div>
+</body>
+</html>

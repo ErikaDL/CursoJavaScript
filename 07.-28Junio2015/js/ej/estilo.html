@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	#ejemplo{
+		width: 100px;
+		height: 100px;
+		display: inline-block;
+		background-color: purple;
+	}
+</style>
+<script>
+function pintarDiv(){
+	var elemento = document.getElementById("ejemplo");
+	elemento.style.background = 'red';
+	elemento.style.position = "relative";
+}
+</script>
+</head>
+<body>
+	<div id="ejemplo"></div>
+	<button onClick="pintarDiv()">Pintar Div</button>
+</body>
+</html>

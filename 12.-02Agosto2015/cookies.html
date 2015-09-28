@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cookies JS</title>
+</head>
+<body>
+	<script>		
+
+	var eliminarCookies = function(nombre){
+		document.cookie = nombre + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	};
+
+	var mostrarCookie = function(nombre){
+		//var valordeCookie = document.cookie = nombre;
+		//alert(valordeCookie);
+		
+		match = document.cookie.match(new RegExp(nombre + '=([^;]+)'));
+		if(match) return match[1];
+	};
+
+	//eliminarCookies('usuario');
+
+	document.cookie = "usuario=Erika"
+
+	var Res = mostrarCookie('usuario');
+
+	console.log(Res);
+
+	document.write("Hola " + Res);
+
+	</script>
+</body>
+</html>

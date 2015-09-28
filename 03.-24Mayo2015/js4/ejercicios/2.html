@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo #2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+	$('body').ready(function(){
+		$("#envio").click(function(event){
+			event.preventDefault();	
+			
+			var contNombre = $("#nombre").val();
+			
+			$("#msg-envio").removeClass();
+			
+			if(contNombre.length != 0){
+			
+				$("#msg-envio").html("Todo bien.");
+				$("#msg-envio").addClass("ok");	
+				$("#formulario").submit();			
+			
+			}else{
+			
+				$("#msg-envio").html("No dejes campos vacíos.");
+				$("#msg-envio").addClass("error");							
+			}
+		});
+	});
+	</script>
+	<style>
+	.error{
+		padding: 10px;
+		background-color: red;
+		color: #ffffff;
+		display: inline-block;
+		margin-top: 20px;
+	}
+	.ok{
+		padding: 10px;
+		background-color: green;
+		color: #ffffff;
+		display: inline-block;
+		margin-top: 20px;
+	}
+	</style>
+</head>
+<body>
+	<h1>Validar un campo de texto</h1>
+<form id="formulario" method="POST" action="procesar.php">
+	<input type="text" name="nombre" id="nombre">
+	<button type="submit" id="envio">Enviar</button>
+</form>
+<span id="msg-envio"></span>
+</body>
+</html>

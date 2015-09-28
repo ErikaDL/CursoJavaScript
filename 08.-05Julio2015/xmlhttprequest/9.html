@@ -1,0 +1,19 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>onkeypress</title>
+  <script>
+  function pintarAmarillo(elemento){
+    alert("Listo...");
+    var cuerpo = document.getElementsByTagName("body");
+    cuerpo[0].style.background = "yellow";
+  }
+  function rojo(){
+    var cuerpo = document.getElementsByTagName("body");
+    cuerpo[0].style.background = "red";  
+  }
+  </script>
+</head>
+<body onload="pintarAmarillo()" onresize="rojo()">
+</body>
+</html>

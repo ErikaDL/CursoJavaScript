@@ -1,0 +1,27 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>EVENTOS onfocus, onblur</title>
+<script>
+	function Focus(campo){
+		campo.style.background = "pink";
+	}
+	
+	function Blur(campo){
+		if(campo.value == ""){
+			alert("Llena el campo...");
+			campo.style.background = "red";
+		}else{
+			campo.style.background = "green";
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" name="texto" id="texto" placeholder="onfocus..." onfocus="Focus(this)" onblur="Blur(this)">
+	</form>
+</body>
+</html>

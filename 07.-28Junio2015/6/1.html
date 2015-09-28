@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript</title>
+</head>
+<body>
+	<input type="text" id="nombre" placeholder="Nombre" required>
+	<button id="validar" onclick="validar()">Validar</button>
+	<div id="respuesta"></div>
+	<script>
+	function validar(){
+		var campoTexto =  document.getElementById("nombre");
+		if(campoTexto.checkValidity() == false){
+			document.getElementById("respuesta").innerHTML = campoTexto.validationMessage;
+		}else{
+			document.getElementById("respuesta").innerHTML = "El campo está lleno."
+		}
+	}
+	</script>
+</body>
+</html>

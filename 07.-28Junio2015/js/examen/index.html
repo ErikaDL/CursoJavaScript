@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<title>Examen</title>
+	<meta charset="utf-8">
+	<script>
+	function validarEnvio(){
+		var exp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		
+		var formulario = document.forms["registro"];
+		
+		var email =  formulario["email"].value;
+		var pass = formulario["pass"].value;
+		var repass = formulario["repass"].value;
+
+		var mensajeError = document.getElementById("msgError");
+		
+		if(email.length != 0 && pass.length != 0 && repass.length!=0){
+			if(pass != repass){
+				mensajeError.innerHTML = "Las contraseñas no son iguales";
+				return false;
+			}else{
+				if(exp.test(email)){
+					var objeto = {"email" : email, "password" : pass};
+					mensajeError.innerHTML = objeto;
+					console.log(objeto);
+					/*Cambiar a true para enviar formulario*/
+					return false;
+				}else{
+					mensajeError.innerHTML = "EL correo electrónico es inválido";
+					return false;
+				}
+			}
+		}else{			
+			mensajeError.innerHTML = "Debes completas todos los campos";
+			return false;
+		}
+	}
+	</script>
+</head>
+<body>
+	<form name="registro" id="registro" action="algo.php" method="POST" onsubmit="return validarEnvio()">
+		<input type="text" name="email" id="email" placeholder="Escribe tu email">
+		<input type="text" name="pass" id="pass" placeholder="Contraseña">
+		<input type="text" name="repass" id="repass" placeholder="Repite tu contraseña">
+		<button>Enviar</button>
+		<p id="msgError"></p>
+	</form>
+</body>
+</html>

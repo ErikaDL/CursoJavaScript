@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>Ejemplo JS AJAX</title>
+		<script>	
+			$('body').ready
+		</script>	
+	</head>
+	<body onload="mensajeAlerta('Mensaje desde onLoad');">	
+		<button onClick="boton(this);">Click</button>	
+		<p onClick="parrafo(this);">Mensaje desde el parrafo</p> 
+	</body>
+</html>

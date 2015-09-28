@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JavaScript</title>
+	</head>
+	<body>
+		<input type="number" id="numero" min="10" max="20">
+		<input type="text" id="nombre" placeholder="Nombre" required>
+		<button id="validar" onclick="validar()">Validar</button>
+		<div id="respuesta"></div>
+		<script>
+		function validar(){
+			//var campoTexto = document.getElementById("nombre");
+			var campoTexto = document.getElementById("numero");
+
+			if(campoTexto.validity.rangeUnderflow){
+				var mensaje = "Muy bajo";
+			}else{
+				var mensaje = "OK :)";
+			}
+			document.getElementById("respuesta").innerHTML = mensaje;
+		}
+		</script>
+	</body>
+</html>

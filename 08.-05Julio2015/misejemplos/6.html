@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>EVENTOS onmousedown, onmouseup, ondblclick</title>
+<style>
+#div_mouse{
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+	display: inline-block;
+}
+#div_click{
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	display: inline-block;
+}
+</style>
+<script>
+	function pintarRojo(elemento){
+		elemento.style.background = "red"
+	}
+	function pintarAmarillo(elemento){
+		elemento.style.background = "yellow"
+	}
+	function pintarAzul(elemento){
+		elemento.style.background = "blue"
+	}
+</script>
+</head>
+<body>
+	<div id="div_mouse" onmousedown="pintarRojo(this)" onmouseup="pintarAmarillo(this)"></div>
+	<div id="div_click" ondblclick="pintarAzul(this)"></div>
+</body>
+</html>

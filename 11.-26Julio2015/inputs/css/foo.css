@@ -1,0 +1,18 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+#agregar{
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: #ff6600;
+	color: #fff;
+	display: inline-block;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+#lista-nombre div{
+	margin-bottom: 10px;
+}
+#lista-nombre span{
+	margin-bottom: 10px;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Diseño Responsivo - 3Cuadros</title>
+		<meta charset="utf-8">
+		<style>
+		body{
+			margin:0;
+
+		}
+		  div{
+		    background-color: yellow;
+		    width: 100px;
+		    height: 100px;
+		    font-family: arial;
+		    font-size: 16;
+		    float: left;
+		    overflow: none;
+		  }
+		</style>
+		<script>
+			var Div = function (){
+				var ancho = window.innerWidth / 3;
+				//console.log(scrollbarwidth);
+				var altura = 250;//window.innerHeight - 100;
+
+				//alert(altura + " " + ancho);
+				
+				var cuadros = document.getElementsByTagName("div");
+
+				console.log(window.scrollwidth);
+				cuadros[0].style.width = ancho + "px";
+				cuadros[0].style.height = altura + "px";
+				cuadros[0].style.background = "green";
+				cuadros[0].innerHTML = "Ancho: " + ancho + "px";
+
+				cuadros[1].style.width = ancho + "px";
+				cuadros[1].style.height = altura + "px";
+				cuadros[1].style.background = "white";
+				cuadros[1].innerHTML = "Ancho: " + ancho + "px";
+
+				cuadros[2].style.width = ancho + "px";
+				cuadros[2].style.height = altura + "px";
+				cuadros[2].style.background = "red";
+				cuadros[2].innerHTML = "Ancho: " + ancho + "px";
+			}
+			
+			window.addEventListener("resize", Div);
+			window.addEventListener("DOMContentLoaded", Div);
+
+		</script>
+	</head>
+	<body scroll="none">
+		<div name="div"></div>
+		<div name="div"></div>
+		<div name="div"></div>
+	</body>
+</html>

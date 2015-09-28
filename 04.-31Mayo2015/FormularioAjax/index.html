@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<title>Ejemplo AJAX</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="estilos.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+
+	$('body').ready(function(){
+
+		$("#formulario h1").click(function(){
+			$(this).parents().find("#contenedor").slideToggle(200);
+		});
+
+		$("#btn-enviar").click(function(event){
+			event.preventDefault();
+			var nombre = $("#nombre").val();
+			var edad = $("#edad").val();
+			var email = $("#email").val();
+			var coms = $("#coms").val();
+			var exp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+			if(nombre.length != 0 && edad.length != 0 && email.length != 0 && coms.length != 0){
+				
+				if ( !exp.test(email) ){
+					alert("Error: La dirección de correo " + email + " es incorrecta.");
+				}else{
+					var datosFormulario = $("#formulario").serialize();
+
+					$.ajax({
+						url: 'archivo.php',
+						method: 'post',
+						data: datosFormulario,
+						success: function(respuesta){
+							$("#mensaje").html(respuesta).fadeIn(200);
+						}
+					}).done(function(){
+						//alert("terminado...");
+					});
+				}
+
+			}else{
+				alert("Vacío");
+			}
+		});		
+	});
+	</script>
+</head>
+<body>
+	<form method="post" id="formulario" action="archivo.php">
+		<h1>Formulario de registro</h1>
+		<div id="contenedor">
+			<input type="text" name="nombre" id="nombre" placeholder="Tu nombre">
+			<input type="text" name="edad" id="edad" placeholder="Edad">
+			<input type="text" name="email" id="email" placeholder="Correo electrónico">
+			<input type="text" name="coms" id="coms" placeholder="Comentarios">
+			<button type="submit" id="btn-enviar">Enviar</button>
+		</div>
+	</form>
+	<div id="mensaje"></div>
+</body>
+</html>

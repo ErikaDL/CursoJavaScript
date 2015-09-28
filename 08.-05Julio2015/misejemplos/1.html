@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejemplo AJAX XMLHttpRequest</title>
+<script>
+function peticionAjax(string){
+	if(string==""){
+		document.getElementById("msg_respuesta").innerHTML="";
+		return;
+	}
+	if(window.XMLHttpRequest){
+		xmlhttp=new XMLHttpRequest();
+	}else{
+		//IE5 IE6
+		xmlhttp = ActiveXObject("Microsoft.XMLHTTP");
+	}
+}	
+xmlhttp.onreadystatechange=function(){
+	if(xmlhttp.readystate == 4 && xmlhttp.status == 200){
+		document.getElementById("msg_respuesta").innerHTML = xmlhttp.;		
+	}
+}
+//xmlhttp.open("GET","prueba.php?variable=" + string, true);
+xmlhttp.open("POST","prueba.php?variable=" + string, true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//xmlhttp.send();
+var dato = encodeURIComponent(string);
+xmlhttp.send("nombre=" + dato);
+}
+</script>
+</head>
+<body>
+	<form>
+		Personas:
+		<select name="personas" onchange="peticionAjax(this.value)">
+			<option value="">Selecciona un nombre:</option>
+			<option value="Erika">Erika</option>
+			<option value="Yazmin">Yazmin</option>
+			<option value="Jaime">Jaime</option>
+		</select>
+	</form>
+	<div id="msg_respuesta"><b>¡Hola a todos!</b></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript</title>
+</head>
+<body>
+	<form name="registro" id="registro" onsubmit="return validarFormulario()" method="POST" action="algo.php">
+		<input type="text" id="nombre" name="nombre">
+		<button type="submit" id="validar">Validar</button>
+	</form>
+	<div id="respuesta"></div>
+	<script>
+	function validarFormulario(){
+		var elFormulario = document.forms[0];
+		if(elFormulario["nombre"].value == null || elFormulario["nombre"].value == ""){
+			alert("Error");
+			return false;
+		}
+	}
+	</script>
+</body>
+</html>

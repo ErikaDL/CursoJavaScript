@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+	function mostrarAtributo(){
+		var elemento = document.getElementsByTagName("div");
+		var atributo = elemento[0].getAttribute("class");
+		alert(atributo);
+	}
+</script>
+</head>
+<body>
+	<div id="elemento" class="unaClase"></div>
+	<button onClick="mostrarAtributo()">Ver atributo</button>
+</body>
+</html>

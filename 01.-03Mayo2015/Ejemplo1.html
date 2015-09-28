@@ -1,0 +1,24 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		<!--<div id="nombres"></div-->
+		<p id="nombres">Uno</p>
+		<p class="ej">Dos</p>
+		<p class="ej">Tres</p>
+		<button onclick="modificarElemento()">Activar</button>
+		<script>
+			//var miNombre = ["Erika", "Diaz"];
+			//console.log("Mi nombre es " + nombre[0] + " y mi apellido es " + nombre[1]);			
+			//document.getElementById("nombres").innerHTML = miNombre;
+			//var contador = document.getElementsByTagName("p");
+			
+			function modificarElemento(){
+				var contenido = document.getElementsByClassName("ej");
+				contenido[0].innerHTML = "Ejemplo";
+			}
+			
+		</script>
+	</body>
+</html>

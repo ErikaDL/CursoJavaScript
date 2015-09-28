@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	.miClase{
+		background-color: red;
+		color: #fff;
+	}
+</style>
+<script>
+var agregarClase = function(el){	
+	var idElemento = el.id;
+	el.className = "miClase";
+};
+</script>
+</head>
+<body>
+	<div id="algo" onClick="agregarClase(this)">Hola soy un div 0</div>
+	<div id="algo" onClick="agregarClase(this)">Hola soy un div 1</div>
+</body>
+</html>

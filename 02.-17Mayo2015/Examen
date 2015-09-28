@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<script>			
+
+			var dimensiones = function(){
+				var anchura = window.outerWidth;
+				var alto = window.outerHeight;
+				document.getElementById("ancho").innerHTML = anchura;
+				document.getElementById("alto").innerHTML = alto;
+			}
+			
+			window.addEventListener("resize", dimensiones);					
+		</script>	
+	</head>
+	<body id="inicio" data-pantalla="lap">
+		Anchura:<div id="ancho"></div>		
+		Altura:<p id="alto"></p>
+	</body>
+</html>

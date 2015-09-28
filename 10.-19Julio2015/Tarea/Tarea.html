@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Tarea - 19 Julio</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+		<script>
+			function SeleccionarDiv(elemento){
+				var imagenes = document.getElementsByName("div");
+				var x = imagenes.length;
+
+				imagenes[0].style.zIndex = 0;
+				imagenes[1].style.zIndex = 0;
+				imagenes[2].style.zIndex = 0;
+				imagenes[3].style.zIndex = 0;
+
+				elemento.style.zIndex = x + 1;
+
+			}			
+
+		</script>
+	</head>
+	<body scroll="none">
+		<div name="div" class="div" id="div1" ondblclick="SeleccionarDiv(this)"></div>
+		<div name="div" class="div" id="div2" ondblclick="SeleccionarDiv(this)"></div>
+		<div name="div" class="div" id="div3" ondblclick="SeleccionarDiv(this)"></div>
+		<div name="div" class="div" id="div4" ondblclick="SeleccionarDiv(this)"></div>
+	</body>
+</html>

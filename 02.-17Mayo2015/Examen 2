@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<script>			
+
+			var Etiqueta = function(){
+				var nombre = "Erika Díaz";
+				document.getElementById("nom").innerHTML = nombre;
+			}
+			
+			//window.addEventListener("load", Etiqueta);				
+
+		</script>	
+	</head>
+	<body>
+		Nombre:<div id="nom"></div>		
+	</body>
+</html>

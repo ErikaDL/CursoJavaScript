@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+	</head>
+	<body>
+		<div>Div 1</div>		
+		<div>Div 2</div>
+		<div>Div 3</div>
+		Total:<p id="total"></p>
+		<script>						
+				var elementos = document.getElementsByTagName("div");
+
+				var x = elementos.length;
+				document.getElementById("total").innerHTML = x;			
+				console.log(x);
+
+		</script>	
+	</body>
+</html>
